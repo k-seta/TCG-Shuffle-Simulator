@@ -72,8 +72,8 @@ class Deck:
         return self
 
     def show(self, title=None):
-        x = np.array(self.order_init)
-        y = np.array(self.order)
+        x = np.array(self.order)
+        y = np.array(self.order_init)
 
         if title == None:
             plt.title("The Order of the Shuffled Deck")
