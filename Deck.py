@@ -57,8 +57,10 @@ class Deck:
         second_packet = self.order[first_packet_size:]
         order = []
         while True:
-            if len(first_packet) > 0 and len(second_packet) > 0:
-                if random.randint(0, 1) == 0:
+            first_packet_size = len(first_packet)
+            second_packet_size = len(second_packet)
+            if first_packet_size > 0 and second_packet_size > 0:
+                if random.randint(1, first_packet_size+second_packet_size) <= first_packet_size:
                     order.append(first_packet.pop(0))
                 else:
                     order.append(second_packet.pop(0))
